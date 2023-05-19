@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:micro_services/screen_splash.dart';
+
 void main() {
-runApp(MyApp());
+  runApp(MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SafeArea(
-        child: Scaffold(),
-      ),
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
     );
   }
 }
