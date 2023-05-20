@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:micro_services/widgets/Mycontainer.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -144,15 +145,44 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 50,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 1,
+                          endIndent: 3,
+                          indent: 3,
+                        ),
+                      ),
+                      Center(
+                        child: Text('or'),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          endIndent: 3,
+                          thickness: 1,
+                          indent: 3,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 Row(
                   children: [
                     Container(
-                      height: 20,
-                      width: 65,
+                      child: Image.asset('images/facebook.png'),
+                      height: 37,
+                      width: 138,
                       decoration: BoxDecoration(
-                        color: Color(0xffFFFFFF),
+                        color: Color(0xff365194),
+                        borderRadius: BorderRadius.circular(25),
                       ),
-                    )
+                    ),
                   ],
                 )
               ],
