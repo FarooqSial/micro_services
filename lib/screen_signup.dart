@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:micro_services/widgets/MyTestField.dart';
-import 'package:micro_services/widgets/Mycontainer.dart';
+import 'package:micro_services/widgets/MyContainer.dart';
+import 'package:micro_services/widgets/colors.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -37,8 +38,8 @@ class SignupScreen extends StatelessWidget {
               child: Text(
                 'Logo',
                 style: TextStyle(
-                  color: Color(0xffED1C24),
-                  fontFamily: 'PoetsenoneRegular',
+                  color: MicroServicesColor.redColor,
+                  fontFamily: 'PoetSenOneRegular',
                   fontSize: 55,
                 ),
               ),
@@ -52,7 +53,7 @@ class SignupScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 60),
+              padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Column(
                 children: [
                   MyTextField(
@@ -88,17 +89,17 @@ class SignupScreen extends StatelessWidget {
                     width: 278,
                     keyboardType: TextInputType.visiblePassword,
                     icon: Icon(
-                      Icons.remove_red_eye_outlined,
-                      color: Colors.black,
+                      Icons.visibility_outlined,
                     ),
                     obscureText: true,
                   ),
                   SizedBox(
                     height: 20,
                   ),
-                  Mycontainer(
+                  MyContainer(
                     height: 43,
                     width: 264,
+                    color: Color(0xffED1C24),
                     child: Center(
                       child: Text('Signup'),
                     ),
@@ -123,6 +124,84 @@ class SignupScreen extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      MyContainer(
+                        height: 37,
+                        width: 138,
+                        color: Color(0xff365194),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Image(
+                              height: 24,
+                              width: 24,
+                              image: AssetImage('images/facebook.png'),
+                            ),
+                            Text(
+                              'Facebook',
+                              style: TextStyle(
+                                color: Color(0xffFFFFFF),
+                                fontFamily: 'PoppinsSemiBold',
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      MyContainer(
+                        height: 37,
+                        width: 138,
+                        color: Color(0xff000000),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Image(
+                              height: 20,
+                              width: 20,
+                              image: AssetImage('images/google.png'),
+                            ),
+                            Text(
+                              'Google',
+                              style: TextStyle(
+                                color: Color(0xffFFFFFF),
+                                fontFamily: 'PoppinsSemiBold',
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  IntrinsicHeight(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Already have an account  ',
+                          style: TextStyle(
+                            color: Color(0xff979797),
+                            fontSize: 13,
+                            fontFamily: 'PoppinsRegular',
+                          ),
+                        ),
+                        VerticalDivider(
+                          thickness: 1,
+                          color: Color(0xff979797),
+                        ),
+                        Text(
+                          'Login',
+                          style: TextStyle(
+                            color: Color(0xffED1C24),
+                            fontFamily: 'PoppinsSemiBold',
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

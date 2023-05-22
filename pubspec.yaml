@@ -75,9 +75,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: PoetsenoneRegular
+    - family: PoetSenOneRegular
       fonts:
-        - asset: fonts/PoetsenOne-Regular.ttf
+        - asset: fonts/PoetSenOne-Regular.ttf
     - family: PoppinsMedium
       fonts:
         - asset: fonts/Poppins-Medium.ttf
