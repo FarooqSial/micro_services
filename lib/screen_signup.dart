@@ -3,6 +3,8 @@ import 'package:micro_services/widgets/MyTestField.dart';
 import 'package:micro_services/widgets/MyContainer.dart';
 import 'package:micro_services/widgets/colors.dart';
 
+import 'Screen_Login.dart';
+
 class SignupScreen extends StatelessWidget {
   const SignupScreen({Key? key}) : super(key: key);
 
@@ -10,18 +12,16 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFFFFFF),
+        backgroundColor: MicroServicesColor.whiteColor,
         appBar: AppBar(
-          backgroundColor: Color(0xffFFFFFF),
+          backgroundColor: MicroServicesColor.whiteColor,
           elevation: 0,
           leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },
-            child: Icon(
-              Icons.arrow_back_ios_new_outlined,
-              color: Color(0xff000000),
-            ),
+            child: Icon(Icons.arrow_back_ios_new_outlined,
+                color: MicroServicesColor.blackColor),
           ),
         ),
         body: Column(
@@ -29,7 +29,7 @@ class SignupScreen extends StatelessWidget {
             Text(
               'Signup',
               style: TextStyle(
-                color: Color(0xff000000),
+                color: MicroServicesColor.blackColor,
                 fontFamily: 'PoppinsSemiBold',
                 fontSize: 25,
               ),
@@ -47,7 +47,7 @@ class SignupScreen extends StatelessWidget {
             Text(
               'Let’s Get It Started!',
               style: TextStyle(
-                color: Color(0xff000000),
+                color: MicroServicesColor.blackColor,
                 fontFamily: 'PoppinsMedium',
                 fontSize: 18,
               ),
@@ -99,7 +99,7 @@ class SignupScreen extends StatelessWidget {
                   MyContainer(
                     height: 43,
                     width: 264,
-                    color: Color(0xffED1C24),
+                    color: MicroServicesColor.redColor,
                     child: Center(
                       child: Text('Signup'),
                     ),
@@ -131,7 +131,7 @@ class SignupScreen extends StatelessWidget {
                       MyContainer(
                         height: 37,
                         width: 138,
-                        color: Color(0xff365194),
+                        color: MicroServicesColor.blueColor,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -154,7 +154,7 @@ class SignupScreen extends StatelessWidget {
                       MyContainer(
                         height: 37,
                         width: 138,
-                        color: Color(0xff000000),
+                        color: MicroServicesColor.blackColor,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -166,7 +166,7 @@ class SignupScreen extends StatelessWidget {
                             Text(
                               'Google',
                               style: TextStyle(
-                                color: Color(0xffFFFFFF),
+                                color: MicroServicesColor.whiteColor,
                                 fontFamily: 'PoppinsSemiBold',
                                 fontSize: 15,
                               ),
@@ -183,21 +183,31 @@ class SignupScreen extends StatelessWidget {
                         Text(
                           'Already have an account  ',
                           style: TextStyle(
-                            color: Color(0xff979797),
+                            color: MicroServicesColor.textColor,
                             fontSize: 13,
                             fontFamily: 'PoppinsRegular',
                           ),
                         ),
                         VerticalDivider(
                           thickness: 1,
-                          color: Color(0xff979797),
+                          color: MicroServicesColor.textColor,
                         ),
-                        Text(
-                          'Login',
-                          style: TextStyle(
-                            color: Color(0xffED1C24),
-                            fontFamily: 'PoppinsSemiBold',
-                            fontSize: 14,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginScreen(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                              color: MicroServicesColor.redColor,
+                              fontFamily: 'PoppinsSemiBold',
+                              fontSize: 14,
+                            ),
                           ),
                         ),
                       ],

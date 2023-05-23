@@ -6,4 +6,5 @@ class MicroServicesColor{
   static const Color blueColor = Color(0xff365194);
   static const Color textFieldColor = Color(0xffF2F2F2);
   static const Color textColor = Color(0xff979797);
+  static const Color whiteColor = Color(0xffffffff);
 }

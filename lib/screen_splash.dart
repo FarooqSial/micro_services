@@ -1,7 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:micro_services/screen_signup.dart';
+import 'package:micro_services/widgets/colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFFFFFF),
+        backgroundColor: MicroServicesColor.whiteColor,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -37,15 +37,15 @@ class _SplashScreenState extends State<SplashScreen> {
               Text(
                 'Logo',
                 style: TextStyle(
-                  color: Color(0xffED1C24),
-                  fontFamily: 'PoetsenoneRegular',
+                  color: MicroServicesColor.redColor,
+                  fontFamily: 'PoetSenOneRegular',
                   fontSize: 55,
                 ),
               ),
               Text(
                 'App Name',
                 style: TextStyle(
-                  color: Color(0xff000000).withOpacity(0.1),
+                  color: MicroServicesColor.blackColor.withOpacity(0.1),
                   fontFamily: 'PoppinsSemiBold',
                   fontSize: 24,
                 ),

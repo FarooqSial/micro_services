@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:micro_services/widgets/MyTestField.dart';
 import 'package:micro_services/widgets/MyContainer.dart';
+import 'package:micro_services/widgets/colors.dart';
+
+import 'Screen_Forgot_Password.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -8,186 +12,206 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: MicroServicesColor.whiteColor,
         appBar: AppBar(
-          backgroundColor: Color(0xffffffff),
+          backgroundColor: MicroServicesColor.whiteColor,
           elevation: 0,
-          leading: Icon(
-            Icons.arrow_back_ios,
-            size: 20,
-            color: Color(0xff000000),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios_new_outlined,
+                color: MicroServicesColor.blackColor),
           ),
         ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
+        body: Column(
+          children: [
+            Text(
+              'Login',
+              style: TextStyle(
+                color: MicroServicesColor.blackColor,
+                fontFamily: 'PoppinsSemiBold',
+                fontSize: 25,
+              ),
+            ),
+            Center(
+              child: Text(
+                'Logo',
+                style: TextStyle(
+                  color: MicroServicesColor.redColor,
+                  fontFamily: 'PoetSenOneRegular',
+                  fontSize: 55,
+                ),
+              ),
+            ),
+            Text(
+              'Welcome back!',
+              style: TextStyle(
+                color: MicroServicesColor.blackColor,
+                fontFamily: 'PoppinsMedium',
+                fontSize: 18,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Column(
+                children: [
+                  MyTextField(
+                    hintText: 'Email',
+                    height: 43,
+                    width: 278,
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  MyTextField(
+                    hintText: 'Password',
+                    height: 43,
+                    width: 278,
+                    keyboardType: TextInputType.visiblePassword,
+                    icon: Icon(
+                      Icons.visibility_outlined,
                     ),
+                    obscureText: true,
                   ),
-                ),
-                Image.asset(
-                  'images/Logo.png',
-                  height: 100,
-                  width: 130,
-                ),
-                Text(
-                  'Welcome back!',
-                  style: TextStyle(
-                    color: Color(0xff000000),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                  height: 43,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      filled: true,
-                      contentPadding: EdgeInsets.only(top: 5, left: 15),
-                      hintText: 'Email',
-                      hintStyle: TextStyle(fontSize: 12),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(
-                          color: Color(0xffF2F2F2),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ForgotPasswordScreen(),
                         ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(
-                          color: Color(0xffF2F2F2),
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(
-                          color: Color(0xff64B5F6),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                SizedBox(
-                  height: 43,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      filled: true,
-                      suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                      contentPadding: EdgeInsets.only(top: 5, left: 15),
-                      hintText: 'Password',
-                      hintStyle: TextStyle(fontSize: 12),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(
-                          color: Color(0xffF2F2F2),
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(
-                          color: Color(0xffF2F2F2),
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(
-                          color: Color(0xff64B5F6),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      fontSize: 12,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 60,
-                ),
-                Container(
-                  child: Center(
+                      );
+                    },
                     child: Text(
-                      'Login ',
+                      'Forgot Password?',
                       style: TextStyle(
-                          color: Color(0xffffffff),
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                        color: MicroServicesColor.blackColor,
+                        fontSize: 12,
+                        fontFamily: 'PoppinsRegular',
+                      ),
                     ),
                   ),
-                  height: 43,
-                  width: 266,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Color(
-                      0xffED1C24,
+                  SizedBox(
+                    height: 20,
+                  ),
+                  MyContainer(
+                    height: 43,
+                    width: 264,
+                    color: MicroServicesColor.redColor,
+                    child: Center(
+                      child: Text('Signup'),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40),
-                  child: Row(
+                  Row(
                     children: [
                       Expanded(
+                        flex: 2,
                         child: Divider(
                           thickness: 1,
                           endIndent: 3,
-                          indent: 3,
+                          indent: 5,
                         ),
                       ),
-                      Center(
-                        child: Text('or'),
+                      Expanded(
+                        flex: 1,
+                        child: Center(
+                          child: Text('OR'),
+                        ),
                       ),
                       Expanded(
+                        flex: 2,
                         child: Divider(
-                          endIndent: 3,
+                          endIndent: 5,
                           thickness: 1,
-                          indent: 3,
+                          indent: 5,
                         ),
                       ),
                     ],
                   ),
-                ),
-                Row(
-                  children: [
-                    Container(
-                      child: Image.asset('images/facebook.png'),
-                      height: 37,
-                      width: 138,
-                      decoration: BoxDecoration(
-                        color: Color(0xff365194),
-                        borderRadius: BorderRadius.circular(25),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      MyContainer(
+                        height: 37,
+                        width: 138,
+                        color: MicroServicesColor.blueColor,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Image(
+                              height: 24,
+                              width: 24,
+                              image: AssetImage('images/facebook.png'),
+                            ),
+                            Text(
+                              'Facebook',
+                              style: TextStyle(
+                                color: Color(0xffFFFFFF),
+                                fontFamily: 'PoppinsSemiBold',
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
+                      MyContainer(
+                        height: 37,
+                        width: 138,
+                        color: MicroServicesColor.blackColor,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Image(
+                              height: 20,
+                              width: 20,
+                              image: AssetImage('images/google.png'),
+                            ),
+                            Text(
+                              'Google',
+                              style: TextStyle(
+                                color: MicroServicesColor.whiteColor,
+                                fontFamily: 'PoppinsSemiBold',
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  IntrinsicHeight(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Don’t have an account  ',
+                          style: TextStyle(
+                            color: MicroServicesColor.textColor,
+                            fontSize: 13,
+                            fontFamily: 'PoppinsRegular',
+                          ),
+                        ),
+                        VerticalDivider(
+                          thickness: 1,
+                          color: MicroServicesColor.textColor,
+                        ),
+                        Text(
+                          'Signup',
+                          style: TextStyle(
+                            color: MicroServicesColor.redColor,
+                            fontFamily: 'PoppinsSemiBold',
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                )
-              ],
+                  ),
+                ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

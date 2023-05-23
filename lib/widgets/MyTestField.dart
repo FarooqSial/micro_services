@@ -9,6 +9,7 @@ class MyTextField extends StatelessWidget {
     this.width,
     this.icon,
     this.keyboardType,
+    this.color,
   });
 
   final double? height;
@@ -17,6 +18,7 @@ class MyTextField extends StatelessWidget {
   final bool? obscureText;
   final Widget? icon;
   final String hintText;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class MyTextField extends StatelessWidget {
           keyboardType: keyboardType,
           decoration: InputDecoration(
             suffixIcon: icon,
-            fillColor: Color(0xffF2F2F2),
+            fillColor: color ?? Color(0xffF2F2F2),
             contentPadding: EdgeInsets.only(top: 10, left: 10),
             hintText: hintText,
             hintStyle: TextStyle(
